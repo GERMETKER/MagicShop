@@ -12,7 +12,7 @@ namespace MagicShop
         public double TechLevel { get; set; }
         public string Manufacturer { get; set; }
 
-        public override void Serialize()
+        public override void Serialize(string filepath)
         {
             /*ModernArtifact modernArtifact = new ModernArtifact { Id = 1, Name = "Gorget of Life", PowerLewel = 53, TechLevel = 95, Manufacturer = "Elf king", SRarity = Rarity.Epic};*/
 
@@ -21,7 +21,7 @@ namespace MagicShop
                 Formatting = Formatting.Indented
             };
             string json = JsonConvert.SerializeObject(this, settings);
-            File.WriteAllText("ModernArtifact.json", json);
+            File.WriteAllText(filepath, json);
         }
     }
 }

@@ -12,11 +12,11 @@ namespace MagicShop
         public int Age { get; set; }
         public string OriginRealm { get; set; }
 
-        public override void Serialize()
+        public override void Serialize(string filepath)
         {
            /* var antiqueArtifact = new AntiqueArtifact { Name = "Light Ring", Id = 1, PowerLewel = 15, Age = 200, OriginRealm = "Brawlstarsia", SRarity = Rarity.Rare}; */ 
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(AntiqueArtifact));
-            using (var writer = new StreamWriter("AntiqueArtifact.xml"))
+            using (var writer = new StreamWriter(filepath))
             {
                 xmlSerializer.Serialize(writer, this);
             }

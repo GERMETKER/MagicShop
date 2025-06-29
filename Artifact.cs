@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MagicShop
 {
-    public abstract class Artifact
+    public abstract class Artifact 
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -20,7 +20,7 @@ namespace MagicShop
             Legendary
         }
         
-        public abstract void Serialize();
+        public abstract void Serialize(string filepath);
 
 
     }
